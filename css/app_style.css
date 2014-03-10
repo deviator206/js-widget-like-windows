@@ -1,0 +1,84 @@
+/*
+ CSS FOR TILE
+ * */
+
+.tile-container {
+	display: table-cell;
+	padding: 10px;
+}
+.top-panel {
+	display: table;
+	width: 100%;
+	background-color: rgb(151, 23, 23);
+	border-radius: 10px 10px 0 0;
+	color: white;
+	font-weight: bold;
+}
+
+.top-panel-column {
+	display: table-cell;
+	width: 70%;
+}
+
+.top-panel-column-misc {
+	width: 30%;
+	margin-top: 5%;
+}
+.btn-ctrl {
+	width: 50%;
+	float: left;
+	cursor: pointer;
+}
+.btn-minimize {
+
+}
+.btn-close {
+
+}
+
+.top-panel-column-label {
+	padding-left: 5%;
+	text-align: left;
+	padding-bottom: 4%;
+}
+.panel-content-wrapper {
+	display: table;
+	width: 335px;
+	background-color: rgb(241, 247, 236);
+	border-radius: 0 0 10px 10px;
+	color: white;
+	font-weight: bold;
+	height: 200px;
+}
+
+/*
+ CSS FOR HTML PAGE
+ * */
+
+.app-header {
+	width: 100%;
+	height: 10%;
+	border: 1px black solid;
+	background-color: rgba(226, 199, 152, 0.38);
+}
+
+.app-footer {
+	width: 95%;
+	height: 20%;
+	border: 1px black solid;
+	margin-left: 2%;
+	background-color: rgba(226, 199, 152, 0.38);
+}
+
+.app-content {
+	width: 100%;
+	height: 68%;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+.tiles_wrapper {
+	display: table;
+	xmargin-left: 1%;
+}
+
