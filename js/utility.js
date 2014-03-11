@@ -87,3 +87,34 @@ HTMLTemplate.prototype = {
 };
 
 window.htmltmpl = new HTMLTemplate();
+
+/***/
+
+DomManipulation = function() {
+
+	return (window.dMisc === undefined) ? this : window.dMisc;
+}
+
+DomManipulation.prototype = {
+	addEventListener : function(ID, evtType, handler, type) {
+		/*
+		 We can provide.. provision for checking the IE and accordingly change event to attachEvent
+		 */
+		var docEle, i;
+		switch(type) {
+			case 'class':
+				docEle = document.getElementsByClassName(ID);
+				for ( i = 0; i < docEle.length; i++) {
+					docEle[i].addEventListener(evtType, handler);
+				}
+				break;
+			default:
+				docEle = document.getElementById(ID);
+				docEle.addEventListener(evtType, handler);
+				break;
+		}
+	}
+}
+
+window.dMisc = new DomManipulation();
+

@@ -26,7 +26,7 @@
 
 		<script id="basic_tile_structure" type="html/template">
 
-			<div class="tile-container">
+			<div id="tile_<%dom_id%>" class="tile-container">
 			<div id="top_panel" class="top-panel">
 			<div id="panel_label" class="top-panel-column top-panel-column-label">
 			<%label%>
@@ -41,7 +41,7 @@
 			</div>
 			</div>
 			<div id="panel_content" class="panel-content-wrapper">
-				<%content%>
+			<%content%>
 			</div>
 
 			</div>
@@ -50,10 +50,22 @@
 		<script id="basic_tile_structure" type="html/template">
 
 			<div class="tile-row-container">
-			
+
 			</div>
 
 		</script>
+
+		<script id="footer_widget_figure" type="html/template">
+			
+			<div class="floatL widget-component" >
+			<div>
+			<%widget_name%>
+			</div>
+			<img src="<%widget_img%>" />
+			</div>
+			
+		</script>
+		
 	</head>
 
 	<body>
@@ -79,11 +91,37 @@
 		</div>-->
 
 		<div id="main_wrapper">
-			<div id="text_portal_header" class="app-header"> Text Portal</div>
+			<div id="text_portal_header" class="app-header">
+				Text Portal
+			</div>
 			<div id="text_portal_content" class="app-content">
 				<div id="tile_holder" class="tiles_wrapper"></div>
 			</div>
-			<div id="text_portal_footer" class="app-footer"></div>
+			<div id="text_portal_footer" class="app-footer">
+				<div id="text_portal_footer_sec_1" class="footer-section1 global-header-background">
+					<div class="footer-sec-1-col-1 floatL">
+						Available Widgets
+					</div>
+					<div class="footer-sec-1-col-2 footer-collapse-btn">
+						Open
+					</div>
+				</div>
+				<div id="text_portal_footer_sec_2" class="footer-section2 global-background">
+					<div class="footer-sec-2-col-1 floatL global-header-background">
+						<span class="text-in-center">Available Widgets</span>
+					</div>
+					<div id="footer_widget_container" class="floatL">
+
+					</div>
+					<div id="default_widget_container">
+						
+					</div>
+					<div class="footer-sec-1-col-2 footer-collapse-btn">
+						Collapse
+					</div>
+				</div>
+
+			</div>
 		</div>
 
 	</body>
