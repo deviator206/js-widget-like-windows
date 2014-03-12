@@ -5,33 +5,33 @@
 var config = {
 	total_number_of_tiles : 10,
 	tile_contents : [{
-		label : 'text_1',
+		label : 'Lorem Ipsum1',
 		content_type : 'img',
 		content : 'img/img1.png',
 		min : 0
 	}, {
-		label : 'text_2',
+		label : 'Lorem Ipsum2',
 		content_type : 'img',
 		content : 'img/img2.png',
 		min : 0
 	}, {
-		label : 'text_3',
+		label : 'Lorem Ipsum3',
 		content_type : 'img',
 		content : 'img/img3.png',
 		min : 0
 
 	}, {
-		label : 'text_4',
+		label : 'Lorem Ipsum4',
 		content_type : 'img',
 		content : 'img/img4.png',
 		min : 0
 	}, {
-		label : 'text_5',
+		label : 'Lorem Ipsum6',
 		content_type : 'img',
 		content : 'img/img5.png',
 		min : 0
 	}, {
-		label : 'text_6',
+		label : 'Lorem Ipsum7',
 		content_type : 'img',
 		content : 'img/img6.png',
 		min : 0
@@ -47,7 +47,7 @@ var config = {
 
 	}],
 	new_widget : {
-		label : 'New',
+		label : 'New Widget',
 		img : 'img/new_widget.png'
 
 	}
