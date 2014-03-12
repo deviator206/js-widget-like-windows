@@ -1,5 +1,7 @@
 /**
  * @author Sandeep{deviator206@gmail.com}
+ * 
+ *  Page build from scratch with only JAVASCRIPT
  */
 
 //application namespace to avoid cluttering global name
@@ -17,6 +19,7 @@ dApp.ApplicationWrapper = function() {
 }
 
 dApp.ApplicationWrapper.prototype = {
+	// Drawing the Tiles in center panel
 	drawTiles : function(arrContent) {
 		var nIndex = 0, sHTML = "", docFrag, mParentDocFrag, nColCounter = 0;
 		mParentDocFrag = document.createElement("div");
@@ -75,25 +78,11 @@ dApp.ApplicationWrapper.prototype = {
 		}, 'class');
 
 	},
+	// initialization of the TILES
 	initTile : function(i) {
 		var that = this;
 		window.dMisc.addEventListener('tile_holder', 'drop', function(evt) {
 			evt.preventDefault();
-			//var data = evt.dataTransfer.getData("Text");
-			//
-			/*config.tile_contents.push({
-			 label : config.init_widget[that.mCurrentMinimizedSelected].label,
-			 content : 'img/img2.png',
-			 content_type : 'img',
-			 min : 0
-			 });
-			 that.drawTiles(config.tile_contents)
-
-			 config.init_widget.splice(that.mCurrentMinimizedSelected, 1);
-			 this.mCurrentMinimizedSelected = -1;
-			 that.reDrawWidgets();
-			 */
-
 			that.addNewTile(that.mCurrentMinimizedSelected, config.init_widget[that.mCurrentMinimizedSelected], true);
 			that.mCurrentMinimizedSelected = -1;
 
@@ -104,7 +93,7 @@ dApp.ApplicationWrapper.prototype = {
 
 		});
 	},
-
+	// Drawing the basic footer 
 	drawFooter : function() {
 		this.reDrawWidgets();
 		this.manipultateFooter({
@@ -114,6 +103,7 @@ dApp.ApplicationWrapper.prototype = {
 		})
 		window.dMisc.addEventListener('footer-collapse-btn', 'click', this.manipultateFooter.bind(this), 'class');
 	},
+	// Redrawing the footer widgets
 	reDrawWidgets : function() {
 		var i, sHTML = "";
 		//default addon
@@ -141,10 +131,9 @@ dApp.ApplicationWrapper.prototype = {
 		window.dMisc.addEventListener('widget-component', 'click', this.minimizedWidgetClicked.bind(this), 'class');
 		window.dMisc.addEventListener('widget-component', 'drag', this.dragInit.bind(this), 'class');
 
-		//document.getElementById('default_widget_container').innerHTML = "";
-		//document.getElementById('default_widget_container').innerHTML = sHTML;
 
 	},
+	// Adding new Tile - either by new widget or dragging the widget
 	addNewTile : function(nID, data, spliceCheck) {
 		config.tile_contents.push({
 			label : data.label,
@@ -159,6 +148,7 @@ dApp.ApplicationWrapper.prototype = {
 		this.reDrawWidgets();
 
 	},
+	// basic initialzation required for POPUP
 	initializePopUp : function() {
 		var that = this;
 		document.getElementById('popup_holder').style.display = "none";
@@ -177,19 +167,24 @@ dApp.ApplicationWrapper.prototype = {
 			that.hidePopUp();
 		});
 	},
+	//show up the popup
 	showPopUp : function() {
 		document.getElementById('popup_holder').style.display = "block";
 	},
+	// hiding and  resetting the popup
 	hidePopUp : function() {
 		document.getElementById('popup_holder').style.display = "none";
 		document.getElementById('txt_wiget_name').value = "";
 		document.getElementById('txt_wiget_code').value = "";
 	},
+	
+	//Initialize the drag 
 	dragInit : function(evt) {
 		this.mCurrentMinimizedSelected = Number(String(evt.target.id).split("_")[1])
 		//ev.dataTransfer.setData("Text", ev.currentTarget.id);
 
 	},
+	// clicked on New Widget
 	minimizedWidgetClicked : function(evt) {
 		switch(evt.currentTarget.id) {
 			case 'default':
@@ -202,6 +197,7 @@ dApp.ApplicationWrapper.prototype = {
 		}
 
 	},
+	// open | collapse functionality of the FOOTER component
 	manipultateFooter : function(evt) {
 		if (evt.target !== undefined) {
 			var sT = (evt.target.innerHTML).replace(/\s+/g, '');
@@ -218,6 +214,11 @@ dApp.ApplicationWrapper.prototype = {
 	}
 }
 
+
+
+/*
+ onLoad
+ * */
 window.addEventListener("load", function() {
 	//creating an instance and initiating the app
 	document.getElementById("main_wrapper").style.width = (window.innerWidth - 20) + "px";
@@ -226,6 +227,11 @@ window.addEventListener("load", function() {
 	var gApp = new dApp.ApplicationWrapper();
 
 })
+
+
+/*
+ For logging the errors
+ * */
 
 window.addEventListener("error", function(errorObject) {
 	console.log("type:" + errorObject.error + "\nmsg :" + errorObject.message + "\nlineNo:" + errorObject.lineno + "\nfilename:" + errorObject.filename)

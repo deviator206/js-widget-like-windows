@@ -2,6 +2,10 @@
  * @author Sandeep {deviator206@gmail.com}
  */
 
+
+/*
+ Simple  Html Templating  implemented 
+ * */
 HTMLTemplate = function() {
 
 	this.temporaryCallback = null;
@@ -88,7 +92,9 @@ HTMLTemplate.prototype = {
 
 window.htmltmpl = new HTMLTemplate();
 
-/***/
+/*
+ Simple DOM Manipulation - Managed in JS 
+ * */
 
 DomManipulation = function() {
 
