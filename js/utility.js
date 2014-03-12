@@ -109,10 +109,22 @@ DomManipulation.prototype = {
 				}
 				break;
 			default:
+				console.log("adding event " + ID + " evt " + evtType)
 				docEle = document.getElementById(ID);
 				docEle.addEventListener(evtType, handler);
 				break;
 		}
+	},
+
+	getElementByClassName : function(className, parentID) {
+		var i, docEle = document.getElementById(parentID);
+		for ( i = 0; i < docEle.childNodes.length; i++) {
+			if (docEle.childNodes[i].className === className) {
+				return docEle.childNodes[i];
+				break;
+			}
+		}
+
 	}
 }
 

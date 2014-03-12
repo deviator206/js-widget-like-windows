@@ -27,7 +27,7 @@
 		<script id="basic_tile_structure" type="html/template">
 
 			<div id="tile_<%dom_id%>" class="tile-container">
-			<div id="top_panel" class="top-panel">
+			<div id="top_panel" class="top-panel global-header-background">
 			<div id="panel_label" class="top-panel-column top-panel-column-label">
 			<%label%>
 			</div>
@@ -40,7 +40,7 @@
 			</div>
 			</div>
 			</div>
-			<div id="panel_content" class="panel-content-wrapper">
+			<div id="panel_content" class="panel-content-wrapper" style="opacity: <%min_opacity%>">
 			<%content%>
 			</div>
 
@@ -56,21 +56,19 @@
 		</script>
 
 		<script id="footer_widget_figure" type="html/template">
-			
-			<div class="floatL widget-component" >
+
+			<div id ="<%dom_id%>" draggable=true class="floatL widget-component" >
 			<div>
 			<%widget_name%>
 			</div>
-			<img src="<%widget_img%>" />
+			<img id="<%dom_id_img%>" src="<%widget_img%>" />
 			</div>
-			
+
 		</script>
-		
+
 	</head>
 
 	<body>
-
-		
 
 		<div id="main_wrapper">
 			<div id="text_portal_header" class="app-header">
@@ -96,7 +94,7 @@
 
 					</div>
 					<div id="default_widget_container">
-						
+
 					</div>
 					<div class="footer-sec-1-col-2 footer-collapse-btn">
 						Collapse
@@ -104,6 +102,46 @@
 				</div>
 
 			</div>
+		</div>
+		<div id="popup_holder">
+
+			<div class="popup-content-container">
+				<div class="global-header-background top-panel">
+					<div id="panel_label" class="top-panel-column top-panel-column-label">
+						New Widget
+					</div>
+
+					<div id="panel_ctrl" class="top-panel-column-misc">
+						<div id="panel_minmize" class="btn-ctrl btn-minimize">
+							-
+						</div>
+						<div id="panel_close" class=" btn-ctrl btn-close">
+							X
+						</div>
+					</div>
+				</div>
+				<div class="panel-content-wrapper" style="width: 340px;">
+					<span class="popup-label popup-font"> Name</span>
+					<br />
+					<input  id="txt_wiget_name" class="popup-font" type="text" />
+					<br />
+					<span class="popup-label popup-font"> WidgetCode</span>
+					<br />
+					<input  id="txt_wiget_code" class="popup-font" type="text" />
+					<br />
+					<br />
+					<div class="popup-font" style="width: 100%;">
+						<div id="popup_add_btn" class="popup-buttons" >
+							<span class="text-in-center"> Add </span>
+						</div>
+						<div id="popup_cancel_btn" class="popup-buttons" style="margin-left: 2%;">
+							<span class="text-in-center"> Cancel </span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="popup-background"></div>
 		</div>
 
 	</body>

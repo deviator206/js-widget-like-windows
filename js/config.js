@@ -7,27 +7,34 @@ var config = {
 	tile_contents : [{
 		label : 'text_1',
 		content_type : 'img',
-		content : 'img/img1.png'
+		content : 'img/img1.png',
+		min : 0
 	}, {
 		label : 'text_2',
 		content_type : 'img',
-		content : 'img/img2.png'
+		content : 'img/img2.png',
+		min : 0
 	}, {
 		label : 'text_3',
 		content_type : 'img',
-		content : 'img/img3.png'
+		content : 'img/img3.png',
+		min : 0
+
 	}, {
 		label : 'text_4',
 		content_type : 'img',
-		content : 'img/img4.png'
+		content : 'img/img4.png',
+		min : 0
 	}, {
 		label : 'text_5',
 		content_type : 'img',
-		content : 'img/img5.png'
+		content : 'img/img5.png',
+		min : 0
 	}, {
 		label : 'text_6',
 		content_type : 'img',
-		content : 'img/img6.png'
+		content : 'img/img6.png',
+		min : 0
 	}],
 
 	init_widget : [{
@@ -36,10 +43,6 @@ var config = {
 
 	}, {
 		label : 'PlusTwo',
-		img : 'img/widget.png'
-
-	}, {
-		label : 'PlusThree',
 		img : 'img/widget.png'
 
 	}],
